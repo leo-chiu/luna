@@ -1,0 +1,15 @@
+Item Type,Resource x,Resource ID,Stack Size,Default,Tag,Health,Speed,Damage,Description
+Resource,Wood,0001,1,FALSE,,,,,"A piece of sturdy wood, a carpenter could make fine use of this. But you got to it first."
+Resource,Stone,0002,1,FALSE,,,,,"A pretty heavy stone, great for lugging at the heads of your enemies! Also crafting...if that's more your style."
+Equipment,Hammer,0003,1,FALSE,Tool,,,,"With nothing but a hammer and patience, you can build a city!"
+Resource,Iron,0004,1,FALSE,,,,,"A refined bar of raw iron, extracted from stone."
+Resource,Silica,0005,1,FALSE,,,,,"It's a glassy sand, made from pulverized quartz. It'll get everywhere, so beware!"
+Equipment,Mining-gun,0006,1,FALSE,Tool,,,,Behold! the Bane of Boulders! Solid rocks are no match for this engineering marvel.
+Equipment,Laser-scythe,0007,2,FALSE,Tool,,,,Never a shrubbery too dense nor a tree too great. This laser heated scythe will cleave through the thicket.
+Equipment,Cowboy hat,0008,3,FALSE,Helmet,10,5,,The classic western-staple.
+Equipment,Stretched suspenders,0009,4,FALSE,Top,20,2,,A pair of worn in suspenders. Painted with a deep indigo and dyed with the blood of your enemies. It's quite the look.
+Equipment,Jammy jeans,0010,5,FALSE,Bottom,15,2,,"An ordinary pair of jeans, stained with a splotch of strawberry jam...probably."
+Equipment,Space boots,0011,1,FALSE,Shoes,6,7,,"A pair of chummy boots. Puts a spring in that step, literally. "
+Equipment,Galaxy gloves,0012,2,FALSE,Gloves,6,2,,A couple of mitts steeped in cosmic energy...or at least that's what the cereal box told me. 
+Equipment,Stellar Shooter,0013,3,FALSE,Tool,,,30,Blast your foes down with this dandy dillinger.
+Projectile,Iron Bullet,0014,4,FALSE,,,,40,Bullets made out of pure iron...these are sure to pack a punch!
