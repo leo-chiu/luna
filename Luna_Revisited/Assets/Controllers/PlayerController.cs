@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        move_velocity = input.normalized * stats.speed.getValue();
+        move_velocity = input.normalized * stats.speed.getValue() * SpeedScaleManager.instance.speed_scale;
 
         if(Input.GetAxisRaw("Horizontal") > 0)
         {
@@ -66,30 +66,11 @@ public class PlayerController : MonoBehaviour
             if (hit)
             {
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
-                if (interactable != null)
+                if (interactable != null && interactable.tag == "NPC") 
                 {
                     setFocus(interactable);
                 }
             }
-        }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            if (Inventory.instance.RemoveItem(0, 4))
-            {
-                Debug.Log("Removed 4 of 0");
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            Quest q = QuestManager.instance.all_quests[1];
-            GetComponent<QuestLog>().Add(q);
-        }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            QuestManager.instance.OnQuestProgress(0);
         }
 
         if (focus != null && !focus.active)
@@ -110,7 +91,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 shoulderToMouseDir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         shoulderToMouseDir.z = 0;
-        handle.gameObject.transform.position = new Vector3(transform.position.x, transform.position.y + GetComponent<SpriteRenderer>().bounds.size.y/2, transform.position.z) + (handle.range * shoulderToMouseDir.normalized);
+        handle.gameObject.transform.position = new Vector3(transform.position.x, transform.position.y + GetComponent<SpriteRenderer>().bounds.size.y/2, transform.position.z) + (handle.reach * shoulderToMouseDir.normalized);
         handle.gameObject.transform.right = shoulderToMouseDir.normalized;
     }
 

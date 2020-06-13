@@ -20,13 +20,6 @@ public class ItemPickup : Interactable
 
     private AudioSource pick_up_sound_effect;
 
-    public void Awake()
-    {
-        active = true;
-        pick_up_sound_effect = GetComponent<AudioSource>();
-        sprite = GetComponent<SpriteRenderer>();
-    }
-
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -75,6 +68,10 @@ public class ItemPickup : Interactable
 
     public void Start()
     {
+        active = true;
+        pick_up_sound_effect = GetComponent<AudioSource>();
+        sprite = GetComponent<SpriteRenderer>();
+
         ItemDropEventSystem.instance.onItemPickup += Pickup;
 
         time_to_expire = TimeManager.instance.ItemExpire;
@@ -85,7 +82,8 @@ public class ItemPickup : Interactable
     }
 
     public void primeItem(int item_id, int count)
-    { 
+    {
+        sprite = GetComponent<SpriteRenderer>();
         // this function is called to change the item drop's item and count
         if (ItemManager.instance.all_items.ContainsKey(item_id))
         {

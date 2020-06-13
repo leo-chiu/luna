@@ -20,6 +20,11 @@ public class Interactable : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, radius) ;
     }
 
+    public void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
     public virtual void Interact()
     {
     }

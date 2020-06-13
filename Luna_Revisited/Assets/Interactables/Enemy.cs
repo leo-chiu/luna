@@ -9,11 +9,6 @@ public class Enemy : Interactable
     public GameObject focus;
     public EnemyStats stats;
 
-    public void Awake()
-    {
-        
-    }
-
     public void Start()
     {
         fillStats();

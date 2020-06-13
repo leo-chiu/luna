@@ -43,7 +43,7 @@ public class EnemyController : MonoBehaviour
 
     public void Update()
     {
-        GetComponent<AIPath>().maxSpeed = enemy.stats.speed.getValue();
+        GetComponent<AIPath>().maxSpeed = enemy.stats.speed.getValue() * SpeedScaleManager.instance.speed_scale;
         if (chasing && drop_radius < Vector2.Distance(player.position, transform.position))
         {
             SetCourseToSpawn();

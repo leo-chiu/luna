@@ -79,11 +79,5 @@ public class ItemManagerEditor : Editor
 
             CreateItemAssets();
         }
-        if (GUILayout.Button("Testing"))  
-        {
-            AssetDatabase.Refresh(); 
-            Debug.Log(AssetDatabase.LoadAssetAtPath<Quest>("Assets/Resources/Quests/newquest2.asset").kill_objectives[0].GetType());
-            Debug.Log(AssetDatabase.LoadAssetAtPath<Quest>("Assets/Resources/Quests/newquest2.asset").collect_objectives[0].GetType());
-        }
     }
 }

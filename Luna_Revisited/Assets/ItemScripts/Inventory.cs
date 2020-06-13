@@ -349,8 +349,8 @@ public class Inventory : MonoBehaviour
     public void SwapSlots(int a_index, int b_index)
     {
         // a and b have to be indices contained in the list of inventory items
-        if (a_index < 0 && a_index >= items.Count) return;
-        if (b_index < 0 && b_index >= items.Count) return;
+        if (a_index < 0 || a_index >= items.Count) return;
+        if (b_index < 0 || b_index >= items.Count) return;
 
         ItemStack a = items[a_index];
         items[a_index] = items[b_index];

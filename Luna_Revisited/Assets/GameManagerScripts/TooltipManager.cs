@@ -72,9 +72,43 @@ public class TooltipManager : MonoBehaviour
         if(curr_slot.item.item is Equipment)
         {
             text.text += stat_size_text;
-            text.text += "Attack: +" + (curr_slot.item.item as Equipment).attack_modifier;
-            text.text += "\n";
-            text.text += "Armor: +" + (curr_slot.item.item as Equipment).armor_modifier;
+            if ((curr_slot.item.item as Equipment).attack_modifier > 0)
+            {
+                text.text += "Attack: +" + (curr_slot.item.item as Equipment).attack_modifier;
+                text.text += "\n";
+            }
+            if ((curr_slot.item.item as Equipment).armor_modifier > 0)
+            {
+                text.text += "Armor: +" + (curr_slot.item.item as Equipment).armor_modifier;
+                text.text += "\n";
+            }
+            if ((curr_slot.item.item as Equipment).speed_modifier > 0)
+            {
+                text.text += "Speed: +" + (curr_slot.item.item as Equipment).speed_modifier;
+                text.text += "\n";
+            }
+            if ((curr_slot.item.item as Equipment).mining_modifier > 0)
+            {
+                text.text += "Mining: +" + (curr_slot.item.item as Equipment).mining_modifier;
+                text.text += "\n";
+            }
+            if ((curr_slot.item.item as Equipment).forestry_modifier > 0)
+            {
+                text.text += "Forestry: +" + (curr_slot.item.item as Equipment).forestry_modifier;
+                text.text += "\n";
+            }
+
+            text.text += unsize_text;
+        }
+
+        if(curr_slot.item.item is Projectile)
+        {
+            text.text += stat_size_text;
+            if ((curr_slot.item.item as Projectile).attack_boost > 0)
+            {
+                text.text += "Damage: +" + (curr_slot.item.item as Projectile).attack_boost;
+                text.text += "\n";
+            }
             text.text += unsize_text;
         }
     }

@@ -10,6 +10,11 @@ public class Equipment : Item
     public int attack_modifier;
     public int armor_modifier;
 
+    public int speed_modifier;
+
+    public int mining_modifier;
+    public int forestry_modifier;
+
     public override void Use()
     {
         EquipmentManager.instance.Equip(this);

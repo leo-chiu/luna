@@ -11,6 +11,8 @@ public class ItemManager : MonoBehaviour
 
     public float bobbing_speed;
 
+    public float scatter_factor;
+
     public void Awake()
     {
         if (instance == null)
